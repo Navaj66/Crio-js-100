@@ -1,0 +1,14 @@
+onEvent("button1", "click", function( ) {
+  var num = getNumber("text_input1");
+  reverseFunction(num);
+  setText("labelreversed",reverseFunction(num));
+});
+function reverseFunction(num) {
+  var reversed = 0;
+  while (num != 0) {
+        var lastDigit = num % 10; 
+        reversed = reversed * 10 + lastDigit;
+        num = Math.floor(num / 10); 
+  }
+  return reversed;
+}
