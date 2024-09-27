@@ -1,0 +1,12 @@
+onEvent("button1", "click", function() {
+  var sentence = getText("text_area1");
+  var word = getText("text_input1");
+  var includes = sentence.includes(word);
+  
+  if (includes) {
+    setText("label1", "The word is included in the sentence.");
+  } else {
+    setText("label1", "The word is not included in the sentence.");
+  }
+  console.log(includes);
+});
