@@ -1,0 +1,25 @@
+onEvent("button_SI", "click", function() {
+  var principal = getNumber("text_input_principal_SI");
+  var rate = getNumber("text_input_rate_SI");
+  var time = getNumber("text_input_time_SI");
+  var result = simpleIntrest(principal, rate, time);
+  setText("label_result", result);
+});
+
+onEvent("button_CI", "click", function() {
+  var principal = getNumber("text_input_principal_SI");
+  var rate = getNumber("text_input_rate_SI");
+  var time = getNumber("text_input_time_SI");
+  var result = compoundIntrest(principal, rate, time);
+  setText("label_result", result);
+});
+
+function simpleIntrest(p, r, t) {
+  var SI = (p * r * t) / 100;
+  return SI;
+}
+
+function compoundIntrest(p, r, t) {
+  var CI = p * (Math.pow(1 + (r / 100), t)) - p;
+  return CI;
+}
