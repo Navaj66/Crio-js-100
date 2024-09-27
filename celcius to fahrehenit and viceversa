@@ -1,0 +1,21 @@
+onEvent("button1", "click", function() {
+  var celcius = getNumber("text_input1");
+  var result = celciusFah(celcius);
+  setText("label_result", celcius +" °c is "+ Math.floor(result*100)/100 + " °F. ");
+});
+
+onEvent("button2", "click", function() {
+  var fahrenheit = getNumber("text_input1");
+  var result = fahCelcius(fahrenheit);
+  setText("label_result", fahrenheit +" °F is "+ Math.floor(result*100)/100 + " °c. ");
+});
+
+function celciusFah(c) {
+  var temp = (c * (9 / 5)) + 32;
+  return temp;
+}
+
+function fahCelcius(f) {
+  var temp = (f - 32) * (5 / 9);
+  return temp;
+}
