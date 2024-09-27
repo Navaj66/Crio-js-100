@@ -1,0 +1,17 @@
+onEvent("button1", "click", function() {
+  var x = getNumber("text_input1");
+  var y = leapy(x);
+  setText("label1", y);
+});
+
+function leapy(x) {
+  if (x % 400 === 0) {
+    return "leap year";
+  } else if (x % 100 === 0) {
+    return "not a leap year";
+  } else if (x % 4 === 0) {
+    return "leap year";
+  } else {
+    return "not a leap year";
+  }
+}
