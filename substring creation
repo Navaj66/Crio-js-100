@@ -1,0 +1,8 @@
+onEvent("button1", "click", function( ) {
+  var input_string = getText("text_input1");
+  var start_index = getNumber("text_input2");
+  var end_index = getNumber("text_input3");
+  var substring = input_string.substring(start_index,end_index);
+  setText("label1_substring", substring);
+  console.log(substring);
+});
