@@ -1,0 +1,22 @@
+onEvent("button1", "click", function() {
+  var num = getNumber("text_input1");
+  var result = factorial(num);
+  console.log(result);
+});
+
+function factorial(num) {
+  if (num < 0) {
+    console.log("Please enter a valid positive number.");
+    return null;
+  }
+  if (num === 0) {
+    console.log("The factorial of 0 is 1.");
+    return 1; 
+  }
+  
+  var result = 1;
+  for (var i = num; i >= 1; i--) {
+    result *= i;
+  }
+  return result;
+}
